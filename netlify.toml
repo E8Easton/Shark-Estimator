@@ -9,11 +9,13 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Client-side routing (wouter): every path serves the SPA shell
+# Retired 2026-10-26: quoting now lives in the CRM (one price book that matches the website).
+# Every old estimator link forwards to the CRM's quote-only screen.
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "https://sharkexteriorcalendar.netlify.app/quote-tool"
+  status = 301
+  force = true
 
 [[headers]]
   for = "/assets/*"
