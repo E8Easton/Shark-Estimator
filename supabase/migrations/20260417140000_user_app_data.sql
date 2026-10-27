@@ -1,5 +1,5 @@
 -- One row per auth user (use Anonymous sign-in from the app).
--- Stores sales tracker + quote history as JSON for the Leaf Estimator SPA.
+-- Stores sales tracker + quote history as JSON for the Shark Estimator SPA.
 
 create table if not exists public.user_app_data (
   user_id uuid primary key references auth.users (id) on delete cascade,

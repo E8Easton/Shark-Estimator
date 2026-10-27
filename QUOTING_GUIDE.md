@@ -1,13 +1,13 @@
-# Leaf Cleaning — Official Pricing & Quoting Guide
+# Shark Exterior — Official Pricing & Quoting Guide
 
 **Version:** 1.0 | **Effective Date:** April 2026
-**Prepared by:** Leaf Cleaning Operations
+**Prepared by:** Shark Exterior Operations
 
 ---
 
 ## How We Price Every Job
 
-Every quote at Leaf Cleaning is built on a single, consistent rule: **we price by the pane, not by the window.** Every individual piece of glass on a house counts as one pane. A standard double-hung window with a fixed top section and a sliding bottom section equals **two panes**. This approach eliminates guesswork, keeps every quote consistent regardless of who is standing in the driveway, and protects our margins on every job.
+Every quote at Shark Exterior is built on a single, consistent rule: **we price by the pane, not by the window.** Every individual piece of glass on a house counts as one pane. A standard double-hung window with a fixed top section and a sliding bottom section equals **two panes**. This approach eliminates guesswork, keeps every quote consistent regardless of who is standing in the driveway, and protects our margins on every job.
 
 We organize our pricing into six **pane-range tiers**. Rather than calculating a custom price for every house, we match the total pane count to the appropriate tier and charge the rate for the top of that range. A house with 29 panes is quoted at the 40-pane rate — never the 25-pane rate. This ensures we are never undercharging and that our quotes are fast enough to deliver on the spot.
 
@@ -261,7 +261,7 @@ The following card is intended for field use. Print it, laminate it, and keep it
 
 ```
 ╔══════════════════════════════════════════════════════════════╗
-║          LEAF CLEANING — FIELD PRICING QUICK CARD           ║
+║          SHARK EXTERIOR — FIELD PRICING QUICK CARD           ║
 ╠══════════════════════════════════════════════════════════════╣
 ║  TIER         PANES    EXT    INT    SCRN   TRKS             ║
 ║  ─────────────────────────────────────────────────────────  ║
