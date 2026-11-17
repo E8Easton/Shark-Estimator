@@ -1,0 +1,82 @@
+/*
+ * Shark House design tokens v1
+ * Usage: import this file, then set the company on <html>:
+ *   <html data-company="exterior">   (default)
+ *   <html data-company="electric">
+ *   <html data-company="detail">
+ *   <html data-company="landscape">
+ * Fonts (Google Fonts):
+ *   https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&display=swap
+ * Source of truth: docs/brand/SHARK_BRAND_SYSTEM.md
+ */
+
+:root {
+  /* House constants: never change per company */
+  --deep-water: #0a1628;
+  --deep-panel: #10213a;
+  --deep-line: #1a3152;
+  --foam: #f3f6fa;
+  --mist: #9db0c8;
+
+  /* Company signature colors */
+  --shark-orange: #f26a1b;
+  --voltage-yellow: #ffc629;
+  --lagoon-teal: #19c2b0;
+  --kelp-green: #6cc24a;
+
+  /* Semantic (app UI) */
+  --bg: var(--deep-water);
+  --panel: var(--deep-panel);
+  --line: var(--deep-line);
+  --text: var(--foam);
+  --muted: var(--mist);
+  --success: #2fbf71;
+  --warning: #f5b83d;
+  --danger: #e5484d;
+
+  /* Active company (Exterior by default) */
+  --sig: var(--shark-orange);
+  --sig-ink: #ffffff;              /* text on top of --sig */
+  --sig-soft: rgba(242, 106, 27, 0.16);
+
+  /* Type */
+  --font-display: "Archivo", "Arial Black", Impact, sans-serif; /* use with font-stretch: 125% */
+  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+
+  /* Shape */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+}
+
+[data-company="electric"] {
+  --sig: var(--voltage-yellow);
+  --sig-ink: var(--deep-water);
+  --sig-soft: rgba(255, 198, 41, 0.16);
+}
+[data-company="detail"] {
+  --sig: var(--lagoon-teal);
+  --sig-ink: var(--deep-water);
+  --sig-soft: rgba(25, 194, 176, 0.16);
+}
+[data-company="landscape"] {
+  --sig: var(--kelp-green);
+  --sig-ink: var(--deep-water);
+  --sig-soft: rgba(108, 194, 74, 0.16);
+}
+
+/* Customer-facing documents (quotes, invoices, photo reports): light paper */
+.shark-paper {
+  --bg: var(--foam);
+  --panel: #ffffff;
+  --line: #d9e1ec;
+  --text: var(--deep-water);
+  --muted: #52627a;
+}
+
+/* Optional helpers */
+.shark-display { font-family: var(--font-display); font-stretch: 125%; font-weight: 900; letter-spacing: -0.01em; }
+.shark-label { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.shark-btn { background: var(--sig); color: var(--sig-ink); border-radius: var(--radius-sm); font-weight: 700; }
+.shark-stripe { border-bottom: 4px solid var(--sig); }

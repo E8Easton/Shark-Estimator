@@ -1,0 +1,377 @@
+<title>Shark House Brand Book</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: long scroll "spec sheet". One fixed navy world (Deep Water) shared by every company;
+   each company panel swaps only its signature color through --sig. Single dark look on purpose. */
+:root {
+  --deep: #0A1628;      /* Deep Water: house base, never changes */
+  --deep-2: #10213A;    /* panels */
+  --deep-3: #1A3152;    /* raised / lines */
+  --foam: #F3F6FA;      /* text, uniform patches, van bodies */
+  --mist: #9DB0C8;      /* secondary text */
+  --orange: #F26A1B;    /* Shark Exterior */
+  --volt: #FFC629;      /* Shark Electric */
+  --lagoon: #19C2B0;    /* Shark Detail */
+  --kelp: #6CC24A;      /* open slot (future: Shark Landscape) */
+  --sig: var(--orange);
+  --f-display: "Archivo", "Arial Black", Impact, sans-serif;
+  --f-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--deep); color: var(--foam);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+section { padding-block: 64px; border-top: 1px solid var(--deep-3); }
+h1, h2, h3 { font-family: var(--f-display); font-stretch: 125%; line-height: 1.02; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.4rem, 7vw, 5rem); font-weight: 900; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.6rem); font-weight: 850; }
+h3 { font-size: 1.15rem; font-weight: 800; }
+p { margin: 0; max-width: 65ch; }
+.eyebrow { font-family: var(--f-mono); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--mist); }
+.lede { font-size: 1.15rem; color: var(--mist); }
+.stack { display: flex; flex-direction: column; gap: 16px; }
+.grid { display: grid; gap: 20px; }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.g4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.mono { font-family: var(--f-mono); }
+
+/* Hero */
+.hero { padding-block: 72px 56px; display: grid; gap: 40px; }
+.hero h1 span { color: var(--orange); }
+.fins { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 640px; }
+.fins .tile { background: var(--deep-2); border-radius: 14px; padding: 18px 12px 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.fins svg { width: 100%; max-width: 140px; height: auto; }
+.fins .tile b { font-family: var(--f-display); font-stretch: 125%; font-size: .8rem; letter-spacing: .08em; }
+
+/* Lesson */
+.lesson { background: var(--deep-2); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 10px; }
+.lesson .k { font-family: var(--f-mono); font-size: .75rem; color: var(--orange); letter-spacing: .1em; text-transform: uppercase; }
+
+/* Constants table */
+.table-wrap { overflow-x: auto; border-radius: 14px; border: 1px solid var(--deep-3); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; }
+th, td { text-align: left; padding: 14px 16px; vertical-align: top; border-bottom: 1px solid var(--deep-3); }
+th { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mist); font-weight: 600; background: var(--deep-2); }
+tr:last-child td { border-bottom: 0; }
+td:first-child { font-weight: 700; white-space: nowrap; }
+.chip { display: inline-block; font-family: var(--f-mono); font-size: .72rem; padding: 2px 8px; border-radius: 99px; border: 1px solid currentColor; }
+
+/* Company panels */
+.co { --sig: var(--orange); border-radius: 22px; background: var(--deep-2); overflow: hidden; }
+.co.electric { --sig: var(--volt); }
+.co.detail { --sig: var(--lagoon); }
+.co-head { padding: 28px; display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); border-bottom: 4px solid var(--sig); }
+.co-head .lock { width: 100%; max-width: 360px; height: auto; }
+.co-head .tag { font-family: var(--f-display); font-stretch: 110%; font-size: 1.3rem; font-weight: 800; color: var(--sig); }
+.co-body { padding: 28px; display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.co-body > div { min-width: 0; }
+.swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+.sw { width: 92px; border-radius: 10px; overflow: hidden; background: var(--deep); font-family: var(--f-mono); font-size: .68rem; }
+.sw i { display: block; height: 52px; }
+.sw span { display: block; padding: 6px 8px; color: var(--mist); line-height: 1.3; }
+.mock { background: var(--deep); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.mock svg { width: 100%; height: auto; }
+.mock small { font-family: var(--f-mono); font-size: .7rem; color: var(--mist); letter-spacing: .08em; text-transform: uppercase; }
+ul.clean { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+ul.clean li { padding-left: 18px; position: relative; }
+ul.clean li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 3px; background: var(--sig); border-radius: 2px; }
+.sig-move { border-left: 3px solid var(--sig); padding: 4px 0 4px 14px; }
+.sig-move b { color: var(--sig); }
+
+/* Card mock (leave-behind) */
+.cardmock { width: 100%; max-width: 300px; aspect-ratio: 1.75; border-radius: 12px; background: var(--foam); color: var(--deep); padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+.cardmock::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: var(--sig); }
+.cardmock .t { font-family: var(--f-display); font-stretch: 125%; font-weight: 900; font-size: 1.05rem; }
+.cardmock .row { font-family: var(--f-mono); font-size: .66rem; display: flex; justify-content: space-between; gap: 8px; }
+.cardmock .ok { color: #0A7A3A; font-weight: 600; }
+
+/* Standard steps */
+.steps { counter-reset: s; display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.step { background: var(--deep-2); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 6px; }
+.step .n { font-family: var(--f-mono); font-size: .75rem; color: var(--orange); }
+.step h3 { font-size: 1rem; }
+.step p { color: var(--mist); font-size: .95rem; }
+
+/* Ranks */
+.ranks { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.rank { border: 1px solid var(--deep-3); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px; }
+.rank .bar { display: flex; gap: 4px; }
+.rank .bar i { width: 18px; height: 6px; border-radius: 3px; background: var(--deep-3); }
+.rank .bar i.on { background: var(--orange); }
+.rank p { color: var(--mist); font-size: .92rem; }
+
+/* Club */
+.club { background: linear-gradient(135deg, var(--deep-2), var(--deep-3)); border-radius: 22px; padding: 28px; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.club .pill { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.club .pill span { font-family: var(--f-mono); font-size: .72rem; padding: 4px 10px; border-radius: 99px; color: var(--deep); font-weight: 600; }
+
+/* Rollout */
+.phase { background: var(--deep-2); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+.phase .when { font-family: var(--f-mono); font-size: .75rem; color: var(--orange); letter-spacing: .1em; text-transform: uppercase; }
+.phase ul.clean li::before { background: var(--orange); }
+.decide { border: 1px dashed var(--orange); border-radius: 14px; padding: 20px; }
+.decide ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+footer { padding-block: 40px 64px; color: var(--mist); font-size: .85rem; border-top: 1px solid var(--deep-3); }
+@media (max-width: 520px) { .co-head, .co-body, .club { padding: 20px; } section { padding-block: 48px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .fins .tile svg .fin { transform-origin: 60px 70px; animation: bob 4s ease-in-out infinite; }
+  .fins .tile:nth-child(2) svg .fin { animation-delay: .4s; }
+  .fins .tile:nth-child(3) svg .fin { animation-delay: .8s; }
+  @keyframes bob { 50% { transform: translateY(-3px); } }
+}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="stack">
+      <div class="eyebrow">Shark House · Brand system v1 · Nov 2026</div>
+      <h1>One school.<br><span>Many sharks.</span></h1>
+      <p class="lede">Every company we open looks like a member of the same family. The service changes. The navy, the fin, the uniform, the van and the way we treat customers stay the same. When someone sees a Shark Electric van next to a Shark Exterior van, they should know it's the same team before they read a word.</p>
+    </div>
+    <div class="fins" id="heroFins"></div>
+  </header>
+
+  <section>
+    <div class="stack" style="gap:28px">
+      <div class="stack">
+        <div class="eyebrow">Why this works</div>
+        <h2>We copy In-N-Out's playbook, not its look.</h2>
+        <p class="lede">Subway sells sandwiches. In-N-Out sells In-N-Out. The difference is three things they never change.</p>
+      </div>
+      <div class="grid g3">
+        <div class="lesson"><div class="k">01 · A fixed look</div><h3>Same skeleton everywhere</h3><p>Paper hats, red and white, palm trees. Recognized at 200 feet. Ours: Deep Water navy, the fin, one signature color per company.</p></div>
+        <div class="lesson"><div class="k">02 · A uniform people remember</div><h3>The crew is the billboard</h3><p>A little unusual on purpose. Ours: the snap-front crew shirt with a colored yoke, an oval name patch and a rank bar.</p></div>
+        <div class="lesson"><div class="k">03 · The same ritual every time</div><h3>The experience is the product</h3><p>The same order, every visit. Ours: the Shark Service Standard, seven steps that every company runs the same way.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="stack" style="gap:24px">
+      <div class="stack">
+        <div class="eyebrow">The house rules</div>
+        <h2>What never changes</h2>
+        <p class="lede">If it's on this list, no company changes it. That rule is what makes them look like one family.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Element</th><th>House rule</th><th>What each company swaps</th></tr></thead>
+          <tbody>
+            <tr><td>Name</td><td>SHARK + one word. Wide, heavy wordmark with the service word in small spaced caps between two dashes.</td><td>The word: Exterior, Electric, Detail, Landscape</td></tr>
+            <tr><td>Mark</td><td>The same fin, always. A line under the fin tells you the trade.</td><td>The line: water wave, lightning bolt, speed lines</td></tr>
+            <tr><td>Base color</td><td><span class="chip">#0A1628</span> Deep Water navy plus <span class="chip">#F3F6FA</span> Foam white. Every company, every asset.</td><td>One signature color, used for accents only</td></tr>
+            <tr><td>Type</td><td>Archivo Expanded for headlines, Archivo for text, Plex Mono for tickets and job numbers.</td><td>Nothing</td></tr>
+            <tr><td>Uniform</td><td>Navy snap-front crew shirt, colored yoke, oval name patch, fin on the sleeve, rank bar on the chest. Navy cap. White shoe covers inside.</td><td>Yoke and cap-logo color</td></tr>
+            <tr><td>Vehicle</td><td>White body, navy lower band, signature stripe, big fin on the back doors, crew number on the bumper.</td><td>Stripe color and service word</td></tr>
+            <tr><td>Service</td><td>The Shark Service Standard (below), the Fin Check card, a photo report within one hour.</td><td>One trade-specific move per company</td></tr>
+            <tr><td>Membership</td><td>The Shark Club. One membership, honored by every company.</td><td>The perks inside each trade</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="stack" style="gap:28px">
+      <div class="stack">
+        <div class="eyebrow">The three companies</div>
+        <h2>Same family, different trade</h2>
+        <p class="lede">Shark Exterior is the flagship and launches the system now. Electric and Detail are ready to open whenever you are.</p>
+      </div>
+      <div id="companies" class="stack" style="gap:28px"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="stack" style="gap:24px">
+      <div class="stack">
+        <div class="eyebrow">The ritual</div>
+        <h2>The Shark Service Standard</h2>
+        <p class="lede">Every visit, every company, in this order. The CRM sends steps 1, 6 and 7 for you, so techs don't have to remember them.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">Step 1 · 30 min out</div><h3>"Fin's up" text</h3><p>Photo of the tech, first name, rank and van. "Easton is on the way. Look for the orange stripe."</p></div>
+        <div class="step"><div class="n">Step 2 · Arrival</div><h3>Knock, intro, shoe covers</h3><p>Uniform tucked, cap on. Covers go on before anyone steps inside. Hand over the Fin Check card.</p></div>
+        <div class="step"><div class="n">Step 3 · Before</div><h3>Walkaround</h3><p>Walk the job together for two minutes. Point out problem spots, set expectations, take before photos.</p></div>
+        <div class="step"><div class="n">Step 4 · Work</div><h3>Do the job, leave it cleaner</h3><p>Drop cloths down, tools on a mat, nothing on the lawn. Clean up beyond the job area.</p></div>
+        <div class="step"><div class="n">Step 5 · After</div><h3>Final Fin Check</h3><p>Walk it again with the customer and tick the card together. Fix anything on the spot before leaving.</p></div>
+        <div class="step"><div class="n">Step 6 · Within 1 hour</div><h3>Photo report</h3><p>Before and after photos plus the checklist, texted and emailed from the CRM with the tech's name.</p></div>
+        <div class="step"><div class="n">Step 7 · Next day</div><h3>Review ask + Club offer</h3><p>A thank-you, a one-tap review link, and a Shark Club invite with the first-visit price locked in.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="stack" style="gap:24px">
+      <div class="stack">
+        <div class="eyebrow">Crew culture</div>
+        <h2>Ranks people want to earn</h2>
+        <p class="lede">The rank bar on the chest shows experience. Customers notice it, and crew members have something to work toward. Ranks carry across every Shark company.</p>
+      </div>
+      <div class="ranks">
+        <div class="rank"><div class="bar"><i class="on"></i><i></i><i></i><i></i></div><h3>Pup</h3><p>In training. Always works with a Hammerhead. Learns the Standard.</p></div>
+        <div class="rank"><div class="bar"><i class="on"></i><i class="on"></i><i></i><i></i></div><h3>Fin</h3><p>Certified tech. Runs jobs solo. Has passed the Fin Check audit.</p></div>
+        <div class="rank"><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><h3>Hammerhead</h3><p>Crew lead. Trains Pups, closes upsells on site, owns a van.</p></div>
+        <div class="rank"><div class="bar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div><h3>Great White</h3><p>Runs a company or a territory. This is who takes over when you open the next one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="club">
+      <div class="stack">
+        <div class="eyebrow">The glue between companies</div>
+        <h2>The Shark Club</h2>
+        <p class="lede">Your recurring plans become a membership. A member of one Shark company is a member of all of them, so every new company opens with customers already waiting.</p>
+        <div class="pill"><span style="background:var(--orange)">Exterior</span><span style="background:var(--volt)">Electric</span><span style="background:var(--lagoon)">Detail</span><span style="background:var(--kelp)">Next</span></div>
+      </div>
+      <ul class="clean" style="--sig: var(--orange)">
+        <li><b>Priority booking</b> across every Shark company</li>
+        <li><b>Locked pricing</b> while the membership is active</li>
+        <li><b>Member rate</b> the first time they try a sister company (for example 10% off their first electrical job)</li>
+        <li><b>Member card and window decal</b> with their member number</li>
+        <li><b>One CRM record</b> for each customer, showing every company they use</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="stack" style="gap:24px">
+      <div class="stack">
+        <div class="eyebrow">Shark Exterior rollout</div>
+        <h2>How we switch the flagship over</h2>
+      </div>
+      <div class="grid g3">
+        <div class="phase"><div class="when">Now · first 30 days</div><h3>Look the part</h3><ul class="clean"><li>Finalize the fin and wave lockup</li><li>Order 3 to 5 crew shirts with orange yoke, name patches and navy caps</li><li>Van door magnets plus a back-door fin decal</li><li>Restyle the CRM and quote tool to the house tokens</li><li>Print Fin Check cards and shoe covers</li></ul></div>
+        <div class="phase"><div class="when">Next · days 30 to 90</div><h3>Run the ritual</h3><ul class="clean"><li>CRM sends the Fin's up text, photo report and review ask</li><li>Rename recurring plans to Shark Club tiers</li><li>Yard sign left for 48 hours after every job</li><li>Website restyled to match</li><li>Pup and Fin training checklist</li></ul></div>
+        <div class="phase"><div class="when">Later · 6 months and on</div><h3>Open the next company</h3><ul class="clean"><li>CRM supports more than one company with a switcher</li><li>Promote a Great White to run Exterior</li><li>Launch Shark Electric or Shark Detail with the same kit</li><li>Club members get first access</li></ul></div>
+      </div>
+      <div class="decide">
+        <div class="stack" style="gap:12px">
+          <h3>Decisions only you can make</h3>
+          <ol>
+            <li>Keep "Shark Exterior", or switch to "Shark Exterior Cleaning" on vans and signs? This plan keeps the short name.</li>
+            <li>Third company: Detail, or Landscape? Both are designed to fit. Detail has the lagoon teal, Landscape has the kelp green.</li>
+            <li>Uniform: is the colored-yoke crew shirt bold enough, or do you want an even louder signature item, like an orange bucket hat?</li>
+            <li>Electrical needs a licensed master electrician on the license. Partner, hire, or get licensed yourself?</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>Shark House brand system v1. Source files live in the repo under <span class="mono">docs/brand/</span>, and every AI tool reads them before touching brand or UI work.</footer>
+</div>
+
+<script>
+const FIN = "M44 70 C 56 50, 58 26, 46 6 C 74 14, 94 42, 100 70 Z";
+const LINES = {
+  wave: '<path d="M10 82 C 30 66, 54 66, 72 78 S 104 86, 112 72" fill="none" stroke-width="7" stroke-linecap="round"/>',
+  bolt: '<path d="M8 78 L48 78 L58 66 L66 90 L76 74 L112 74" fill="none" stroke-width="7" stroke-linejoin="miter" stroke-linecap="square"/>',
+  speed: '<path d="M14 76 L112 76 M34 86 L104 86 M58 95 L96 95" fill="none" stroke-width="6" stroke-linecap="round"/>'
+};
+const CO = [
+  { key: "exterior", word: "EXTERIOR", color: "#F26A1B", colorName: "Shark Orange", line: "wave",
+    status: "Flagship · launching now", tag: "Glass so clear it disappears.",
+    services: ["Window cleaning, inside and out", "Screens and track detailing", "House washing and soft washing", "Driveways, patios and concrete", "Gutter cleaning", "Shark Club plans: monthly, quarterly, twice a year"],
+    move: ["The Glass Test", "On the Final Fin Check the tech hands the customer a microfiber cloth to wipe any window. If it streaks, it gets redone on the spot."],
+    van: "Glass so clear it disappears", name: "EASTON", rank: 4 },
+  { key: "electric", word: "ELECTRIC", color: "#FFC629", colorName: "Voltage Yellow", line: "bolt",
+    status: "Ready to open", tag: "Wired right the first time.",
+    services: ["Panel upgrades and replacements", "EV charger installs", "Lighting, fans and fixtures", "Outlets, GFCI and code fixes", "Generators and surge protection", "Shark Club: yearly safety inspection"],
+    move: ["The Panel Map", "Every job ends with a labeled, laminated circuit map taped inside the panel door, with the Shark Electric logo and the crew number. It's still there years later."],
+    van: "Wired right the first time", name: "MARCUS", rank: 3 },
+  { key: "detail", word: "DETAIL", color: "#19C2B0", colorName: "Lagoon Teal", line: "speed",
+    status: "Ready to open", tag: "Showroom, in your driveway.",
+    services: ["Full interior and exterior details", "Paint correction", "Ceramic coating", "Fleet and work-truck washes", "Mobile, at home or the office", "Shark Club: monthly maintenance wash"],
+    move: ["The Showroom Reveal", "The car stays under a branded cover until the customer walks out. Then the cover comes off together, with a small air freshener tag shaped like the fin left on the mirror."],
+    van: "Showroom, in your driveway", name: "JADA", rank: 2 }
+];
+function mark(c, size) {
+  return `<svg viewBox="0 0 120 100" width="${size||120}" aria-hidden="true"><path class="fin" d="${FIN}" fill="${c.color}"/><g stroke="${c.color}">${LINES[c.line]}</g></svg>`;
+}
+function lockup(c) {
+  return `<svg class="lock" viewBox="0 0 360 150" role="img" aria-label="Shark ${c.word.toLowerCase()} logo">
+    <g transform="translate(130 0) scale(.85)"><path d="${FIN}" fill="${c.color}"/><g stroke="${c.color}">${LINES[c.line]}</g></g>
+    <text x="180" y="118" text-anchor="middle" fill="#F3F6FA" font-family="Archivo, Arial Black, sans-serif" font-weight="900" font-stretch="125%" font-size="52" letter-spacing="1">SHARK</text>
+    <line x1="58" y1="137" x2="92" y2="137" stroke="${c.color}" stroke-width="3"/>
+    <line x1="268" y1="137" x2="302" y2="137" stroke="${c.color}" stroke-width="3"/>
+    <text x="180" y="143" text-anchor="middle" fill="${c.color}" font-family="Archivo, sans-serif" font-weight="600" font-size="16" letter-spacing="9">${c.word}</text>
+  </svg>`;
+}
+function shirt(c) {
+  const bars = [0,1,2,3].map(i => `<rect x="${112+i*7}" y="78" width="5" height="3" rx="1" fill="${i < c.rank ? c.color : '#1A3152'}"/>`).join("");
+  return `<svg viewBox="0 0 200 190" role="img" aria-label="Crew shirt with ${c.colorName} yoke">
+    <defs><clipPath id="sh-${c.key}"><path d="M60 30 L84 20 Q100 34 116 20 L140 30 L182 62 L162 92 L145 80 L145 180 L55 180 L55 80 L38 92 L18 62 Z"/></clipPath></defs>
+    <g clip-path="url(#sh-${c.key})">
+      <rect width="200" height="190" fill="#14294A"/>
+      <path d="M0 0 H200 V70 L180 66 L145 56 L55 56 L20 66 L0 70 Z" fill="${c.color}"/>
+      <rect x="0" y="56" width="200" height="3" fill="#F3F6FA" opacity=".9"/>
+    </g>
+    <path d="M84 20 Q100 34 116 20 L110 40 L100 34 L90 40 Z" fill="#0A1628"/>
+    <line x1="100" y1="36" x2="100" y2="180" stroke="#0A1628" stroke-width="2"/>
+    ${[70,95,120,145,168].map(y => `<circle cx="100" cy="${y}" r="2.6" fill="#F3F6FA"/>`).join("")}
+    <ellipse cx="76" cy="84" rx="17" ry="9" fill="#F3F6FA" stroke="${c.color}" stroke-width="2"/>
+    <text x="76" y="87.5" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="8" fill="#0A1628">${c.name.charAt(0)+c.name.slice(1).toLowerCase()}</text>
+    ${bars}
+    <g transform="translate(160 58) rotate(32) scale(.16)"><path d="${FIN}" fill="#F3F6FA"/></g>
+  </svg>`;
+}
+function van(c) {
+  return `<svg viewBox="0 0 320 150" role="img" aria-label="Shark ${c.word.toLowerCase()} van">
+    <defs><clipPath id="vn-${c.key}"><path d="M18 112 L18 48 Q18 34 32 34 L232 34 Q246 34 254 44 L292 82 Q302 86 302 98 L302 112 Z"/></clipPath></defs>
+    <g clip-path="url(#vn-${c.key})">
+      <rect width="320" height="150" fill="#F3F6FA"/>
+      <rect x="0" y="94" width="320" height="20" fill="#0A1628"/>
+      <rect x="0" y="86" width="320" height="6" fill="${c.color}"/>
+      <path d="M214 44 L244 44 L280 82 L214 82 Z" fill="#1A3152"/>
+    </g>
+    <text x="34" y="68" font-family="Archivo, Arial Black, sans-serif" font-weight="900" font-stretch="125%" font-size="26" fill="#0A1628">SHARK</text>
+    <text x="35" y="80" font-family="Archivo, sans-serif" font-weight="700" font-size="9" letter-spacing="4" fill="#0A1628">${c.word}</text>
+    <g transform="translate(172 36) scale(.42)"><path d="${FIN}" fill="${c.color}"/><g stroke="${c.color}">${LINES[c.line]}</g></g>
+    <text x="102" y="107" font-family="IBM Plex Mono, monospace" font-size="6" fill="#F3F6FA" letter-spacing=".5">${c.van.toUpperCase()}</text>
+    ${[78,246].map(x => `<circle cx="${x}" cy="116" r="17" fill="#0A1628" stroke="#9DB0C8" stroke-width="3"/><circle cx="${x}" cy="116" r="6" fill="#9DB0C8"/>`).join("")}
+  </svg>`;
+}
+function card(c) {
+  return `<div class="cardmock" style="--sig:${c.color}"><div class="t">FIN CHECK</div>
+    <div class="stack" style="gap:3px">
+      <div class="row"><span>Walkaround done</span><span class="ok">✓</span></div>
+      <div class="row"><span>${c.move[0]}</span><span class="ok">✓</span></div>
+      <div class="row"><span>Area left cleaner</span><span class="ok">✓</span></div>
+    </div>
+    <div class="row"><span>Crew No. 0${c.rank}</span><span>Shark ${c.word.charAt(0)+c.word.slice(1).toLowerCase()}</span></div></div>`;
+}
+document.getElementById("heroFins").innerHTML = CO.map(c => `<div class="tile">${mark(c, 140)}<b style="color:${c.color}">${c.word}</b></div>`).join("");
+document.getElementById("companies").innerHTML = CO.map(c => `
+  <article class="co ${c.key}">
+    <div class="co-head">
+      <div class="eyebrow">${c.status}</div>
+      ${lockup(c)}
+      <div class="tag">${c.tag}</div>
+      <div class="swatches">
+        <div class="sw"><i style="background:${c.color}"></i><span>${c.colorName}<br>${c.color}</span></div>
+        <div class="sw"><i style="background:#0A1628;box-shadow:inset 0 0 0 1px #1A3152"></i><span>Deep Water<br>#0A1628</span></div>
+        <div class="sw"><i style="background:#F3F6FA"></i><span>Foam<br>#F3F6FA</span></div>
+      </div>
+    </div>
+    <div class="co-body">
+      <div class="stack"><h3>Services</h3><ul class="clean">${c.services.map(s => `<li>${s}</li>`).join("")}</ul>
+        <div class="sig-move"><b>Signature move: ${c.move[0]}.</b> ${c.move[1]}</div></div>
+      <div class="mock">${shirt(c)}<small>Crew shirt · ${c.colorName.toLowerCase()} yoke</small></div>
+      <div class="mock">${van(c)}<small>Van wrap</small>${card(c)}<small>Fin Check card</small></div>
+    </div>
+  </article>`).join("");
+</script>
